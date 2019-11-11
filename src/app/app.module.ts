@@ -7,6 +7,8 @@ import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioComponent } from './inicio/inicio.component';
 import { MascotasListarComponent } from './mascotas/mascotas-listar/mascotas-listar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MascotasService } from './mascotas/mascotas.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,9 @@ import { MascotasListarComponent } from './mascotas/mascotas-listar/mascotas-lis
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
-    //HttpClient
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MascotasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
