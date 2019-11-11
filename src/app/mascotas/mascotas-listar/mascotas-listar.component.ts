@@ -3,6 +3,7 @@ import { MascotasService } from '../mascotas.service';
 import { Mascota } from '../mascota';
 
 
+
 @Component({
   selector: 'app-mascotas-listar',
   templateUrl: './mascotas-listar.component.html',
@@ -12,7 +13,7 @@ export class MascotasListarComponent implements OnInit {
 
   public mascotas:Mascota[] = [];
 
-  constructor(private mascotasService: MascotasService) { }
+  constructor( private mascotasService: MascotasService ) { }
 
   ngOnInit() {
     this.mascotasService.getMascotas().subscribe((data)=>{
