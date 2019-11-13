@@ -1,1 +1,5 @@
-<p>mascotas-listar works!</p>
+<h1>Mascotas para adoptar</h1>
+<table class="table">
+    <tr><th>Nombre</th><th>Tipo</th><th>Edad</th><th>Descripción</th></tr>
+    <tr *ngFor="let mascota of mascotas" > <td>{{mascota.nombre}}</td><td>{{mascota.tipo}}</td><td>{{mascota.edad}}</td><td>{{mascota.descripcion}}</td></tr>
+</table>

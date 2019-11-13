@@ -1,0 +1,6 @@
+//Correr Angular
+ng serve
+
+//Levantar servidor Node
+npm start
+
