@@ -4,3 +4,5 @@ ng serve
 //Levantar servidor Node
 npm start
 
+//Crear componente 
+ng g c <nombre>

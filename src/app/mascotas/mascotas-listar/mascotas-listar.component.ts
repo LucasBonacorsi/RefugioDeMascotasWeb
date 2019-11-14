@@ -9,7 +9,7 @@ import { Mascota } from '../shared/mascota';
 })
 export class MascotasListarComponent implements OnInit {
 
-  public mascotas:Mascota[] = [];
+  public mascotas: Mascota[] = [];
 
   constructor( private mascotasService: MascotasService ) { }
 
@@ -17,5 +17,6 @@ export class MascotasListarComponent implements OnInit {
     this.mascotasService.getMascotas().subscribe((data)=>{
       this.mascotas = data;
     })
+    
   }
 }

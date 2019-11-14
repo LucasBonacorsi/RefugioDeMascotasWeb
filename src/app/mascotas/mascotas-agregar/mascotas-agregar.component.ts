@@ -1,16 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
+import { Mascota } from "../shared/mascota";
+import { MascotasService } from '../shared/mascotas.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-mascotas-agregar',
-  templateUrl: './mascotas-agregar.component.html',
-  styleUrls: ['./mascotas-agregar.component.css']
+  selector: "app-mascotas-agregar",
+  templateUrl: "./mascotas-agregar.component.html",
+  styleUrls: ["./mascotas-agregar.component.css"]
 })
 export class MascotasAgregarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-    console.log("Mascota Agregar creado");
+  
+  constructor(private fb: FormBuilder, private mascotasService: MascotasService) {}
+  
+  
+  onSubmit() {
+    this.mascotasService.addMascota(this.mascotaForm.value);
+  }
+  
+  reset(){
+    this.mascotaForm.reset();
   }
 
+  private mascota: Mascota;
+
+  public mascotaForm = this.fb.group({
+    nombre: ["", Validators.required],
+    tipo: ["", Validators.required],
+    edad: ["", Validators.required, Validators.pattern('[0-9]+')],
+    descripcion: ["", Validators.required]
+  });
+
+  ngOnInit() {
+  }
 }

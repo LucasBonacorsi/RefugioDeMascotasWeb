@@ -1,21 +1,32 @@
 <div class="clr-row">
-    <div class="clr-col-">
-            <h1>Mascotas para adoptar</h1>
-    </div>
+  <div class="clr-col-">
+    <h1>Mascotas para adoptar</h1>
+  </div>
 </div>
 
 <div class="clr-row">
-    <div class="clr-col-">
-        <button class="btn btn-outline" routerLink="/mascotas-agregar">Agregar Mascotas</button>
-    </div>
+  <div class="clr-col-">
+    <button class="btn btn-outline" routerLink="/mascotas-agregar">
+      Agregar Mascotas
+    </button>
+  </div>
 </div>
 
 <div class="clr-row">
-    <div class="clr-col-">
-        <table class="table">
-            <tr><th>Nombre</th><th>Tipo</th><th>Edad</th><th>Descripción</th></tr>
-            <tr *ngFor="let mascota of mascotas"><td>{{mascota.nombre}}</td><td>{{mascota.tipo}}</td><td>{{mascota.edad}}</td><td>{{mascota.descripcion}}</td></tr>
-        </table>
-    </div>
+  <div class="clr-col-">
+    <table class="table">
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Edad</th>
+        <th>Descripción</th>
+      </tr>
+      <tr *ngFor="let mascota of mascotas">
+        <td>{{ mascota.nombre }}</td>
+        <td>{{ mascota.tipo }}</td>
+        <td>{{ mascota.edad }}</td>
+        <td>{{ mascota.descripcion }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
-

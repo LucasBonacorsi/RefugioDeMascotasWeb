@@ -1,1 +1,37 @@
-<p>mascotas-agregar works!</p>
+<h1>Agregar Mascota Para Adopción</h1>
+
+<form clrForm clrLayout="horizontal" [formGroup]="mascotaForm"  (ngSubmit)="onSubmit()">
+  <clr-input-container>
+    <label>Nombre:</label>
+    <input clrInput type="text" formControlName="nombre" />
+    <clr-control-error>Debe indicar un nombre</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label> Tipo:</label>
+    <input clrInput type="text" formControlName="tipo" />
+    <clr-control-error>Debe indicar un tipo</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label> Edad:</label>
+    <input clrInput type="number" formControlName="edad"  min="0"/>
+    <clr-control-error>Debe indicar una edad (sólo números)</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label> Descripción:</label>
+    <input clrInput type="text" size="40" formControlName="descripcion" />
+    <clr-control-error>Debe indicar una descripción</clr-control-error>
+  </clr-input-container>
+  <br>
+  <button class="btn btn-success" type="submit" [disabled]="!mascotaForm.valid"> Agregar </button>
+  <button class="btn btn-primary" type= "reset" (click)="reset()" >Limpiar</button>
+  <button class="btn btn-success-optional"  routerLink="/mascotas-listar" >Cancelar</button>
+  
+</form>
+
+
+
+
+
