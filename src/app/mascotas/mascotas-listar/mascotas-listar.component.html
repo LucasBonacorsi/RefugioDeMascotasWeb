@@ -33,7 +33,7 @@
           </button>
         </td>
         <td id="btnDelete">
-          <button type="button" class="btn btn-icon btn-danger-outline" [routerLink]="['/mascotas', mascota.id]"  routerLinkActive="router-link-active" >
+          <button type="button" class="btn btn-icon btn-danger-outline" (click)="delete()" routerLinkActive="router-link-active" >
           <clr-icon shape="trash"></clr-icon>
         </button>
       </td>

@@ -16,11 +16,7 @@ export class MascotasService {
   }
 
   public addMascota(mascota: Mascota) {
-    return this.httpClient
-      .post<Mascota>(`${this.baseUrl}`, mascota)
-      .subscribe(data => {
-        this.router.navigate(["/mascotas-listar"]);
-      });
+    return this.httpClient.post<Mascota>(`${this.baseUrl}`, mascota);
   }
 
   public getMascota(id: number) {
@@ -29,5 +25,9 @@ export class MascotasService {
 
   public updateMascota(mascota: Mascota) {
     return this.httpClient.put<Mascota>(`${this.baseUrl}`, mascota);
+  }
+
+  public deleteMascota(id: number){
+    return this.httpClient.delete<Mascota>(`${this.baseUrl}/${id}`);
   }
 }

@@ -19,10 +19,10 @@ export class MascotasEditarComponent implements OnInit {
 
   public mascotaForm = this.fb.group({
     id: [""],
-    nombre: ["", [Validators.required]],
-    tipo: [""],
-    edad: [""],
-    descripcion: [""]
+    nombre: ["", Validators.required],
+    tipo: ["", Validators.required],
+    edad: ["", Validators.required, Validators.pattern("[0-9]+")],
+    descripcion: ["", Validators.required]
   });
 
   ngOnInit() {
@@ -30,7 +30,6 @@ export class MascotasEditarComponent implements OnInit {
     this.mascotaService.getMascota(id).subscribe(data => {
       console.log(data);
       this.mascotaForm.setValue(data);
-    
     });
   }
 
