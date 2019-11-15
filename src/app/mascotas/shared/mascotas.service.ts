@@ -19,7 +19,7 @@ export class MascotasService {
     return this.httpClient.post<Mascota>(`${this.baseUrl}`, mascota);
   }
 
-  public getMascota(id: number) {
+  public getMascota(id:number) {
     return this.httpClient.get<Mascota>(`${this.baseUrl}/${id}`);
   }
 

@@ -16,7 +16,7 @@ export class MascotasAgregarComponent implements OnInit {
   ) {}
 
   onSubmit() {
-    this.mascotasService.addMascota(this.mascotaForm.value).subscribe(data => {
+    this.mascotasService.addMascota(this.mascotaForm.value).subscribe( () => {
       this.router.navigate(["/mascotas-listar"]);
     });
   }
