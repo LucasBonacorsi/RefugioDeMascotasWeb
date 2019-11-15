@@ -13,7 +13,6 @@ export class MascotasAgregarComponent implements OnInit {
   
   constructor(private fb: FormBuilder, private mascotasService: MascotasService) {}
   
-  
   onSubmit() {
     this.mascotasService.addMascota(this.mascotaForm.value);
   }
@@ -21,8 +20,6 @@ export class MascotasAgregarComponent implements OnInit {
   reset(){
     this.mascotaForm.reset();
   }
-
-  private mascota: Mascota;
 
   public mascotaForm = this.fb.group({
     nombre: ["", Validators.required],
@@ -32,5 +29,6 @@ export class MascotasAgregarComponent implements OnInit {
   });
 
   ngOnInit() {
+  
   }
 }
