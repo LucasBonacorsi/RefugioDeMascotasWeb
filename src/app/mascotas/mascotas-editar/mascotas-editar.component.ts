@@ -30,6 +30,7 @@ export class MascotasEditarComponent implements OnInit {
     this.mascotaService.getMascota(id).subscribe(data => {
       console.log(data);
       this.mascotaForm.setValue(data);
+    
     });
   }
 
@@ -38,6 +39,7 @@ export class MascotasEditarComponent implements OnInit {
       .updateMascota(this.mascotaForm.value)
       .subscribe(data => {
         console.log(data);
+        this.router.navigate(['/mascotas-listar']);
       });
   }
 }

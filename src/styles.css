@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-#tdPencil {
+#btnPencil {
+    margin: 0px!important;
+    padding: 0px!important;
+}
+
+#btnDelete{
     margin: 0px!important;
     padding: 0px!important;
 }
