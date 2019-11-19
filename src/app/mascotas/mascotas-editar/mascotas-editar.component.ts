@@ -21,7 +21,7 @@ export class MascotasEditarComponent implements OnInit {
     id: [""],
     nombre: ["", Validators.required],
     tipo: ["", Validators.required],
-    edad: ["", Validators.required, Validators.pattern("[0-9]+")],
+    edad: ["", [Validators.required, Validators.pattern("[0-9]+")]],
     descripcion: ["", Validators.required]
   });
 

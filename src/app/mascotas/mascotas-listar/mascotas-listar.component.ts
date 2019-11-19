@@ -20,7 +20,10 @@ export class MascotasListarComponent implements OnInit {
   }
 
   public delete(id: number){
-    this.mascotasService.deleteMascota(id).subscribe( () => this.router.navigate(['/mascotas-listar']));
+    this.mascotasService.deleteMascota(id).subscribe();
+    this.mascotas = this.mascotas.filter( (mascota) =>  mascota.id != id);
+
     console.log("borrado " + id);
+
   }
 }
