@@ -28,7 +28,7 @@ export class MascotasAgregarComponent implements OnInit {
   public mascotaForm = this.fb.group({
     nombre: ["", Validators.required],
     tipo: ["", Validators.required],
-    edad: ["", Validators.required, Validators.pattern("[0-9]+")],
+    edad: ["", [Validators.required, Validators.pattern('[0-9]+')]],
     descripcion: ["", Validators.required]
   });
 
