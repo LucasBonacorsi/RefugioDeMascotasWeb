@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Mascota } from "./mascota";
 import { Router } from "@angular/router";
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: "root"
@@ -17,7 +16,8 @@ export class MascotasService {
   }
 
   public addMascota(mascota: Mascota) {
-    return this.httpClient.post<Mascota>(`${this.baseUrl}`, mascota);
+    
+   return this.httpClient.post<Mascota>(`${this.baseUrl}`, mascota);
   }
 
   public getMascota(id:number) {

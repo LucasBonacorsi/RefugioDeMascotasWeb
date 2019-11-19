@@ -1,0 +1,33 @@
+<div class="clr-row">
+    <div class="clr-col-">
+      <h1>Mascotas para adoptar</h1>
+    </div>
+  </div>
+
+  <div class="clr-row">
+    <div class="clr-col-">
+      <table class="table">
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Edad</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+        <tr *ngFor="let mascota of mascotas">
+          <td>{{ mascota.nombre }}</td>
+          <td>{{ mascota.tipo }}</td>
+          <td>{{ mascota.edad }}</td>
+          <td>{{ mascota.descripcion }}</td>
+          <td id="btnPencil">
+              <button type="button" 
+              class="btn btn-icon" 
+              [routerLink]="['/mascotas', mascota.id]"  
+              routerLinkActive="router-link-active" >
+              <clr-icon shape="pencil"></clr-icon>
+            </button>
+          </td>    
+        </tr>
+      </table>
+    </div>
+  </div>

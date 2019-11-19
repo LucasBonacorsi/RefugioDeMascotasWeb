@@ -1,25 +1,32 @@
 <clr-main-container>
-    <clr-header>
-      <div class="branding">
-         <a routerLink="inicio" class="nav-link">
-              <clr-icon shape="home"></clr-icon>
-              <span class="title">Refugio de animales El Panda Feliz</span>
-         </a>
-       </div>
-     </clr-header>
-     <div class="content-container">
-        <main class="content-area">
-           <router-outlet></router-outlet>
-        </main>
-        <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom" [clr-nav-level]="1">
-           <a clrVerticalNavLink routerLink="inicio" routerLinkActive="active">
-             <clr-icon clrVerticalNavIcon shape="house"></clr-icon>
-                Inicio
-           </a>
-           <a clrVerticalNavLink routerLink="mascotas-listar" routerLinkActive="active">
-            <i class="fas fa-paw" routerLinkActive="active"></i>
-            Mascotas
-          </a>
-        </clr-vertical-nav>
-      </div>
- </clr-main-container>
+  <clr-header>
+    <div class="branding">
+      <a routerLink="inicio" class="nav-link">
+        <clr-icon shape="home"></clr-icon>
+        <span class="title">Refugio de animales El Panda Feliz</span>
+      </a>
+    </div>
+  </clr-header>
+  <div class="content-container">
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom" [clr-nav-level]="1"
+    >
+      <a clrVerticalNavLink routerLink="inicio">
+        <clr-icon clrVerticalNavIcon shape="house" routerLink="inicio" routerLinkActive="active"></clr-icon>
+        Inicio
+      </a>
+
+      <a clrVerticalNavLink routerLink="mascotas-listar">
+        <i class="fas fa-cat" routerLink="mascotas-listar" routerLinkActive="active"></i>
+        Mascotas
+      </a>
+
+      <a clrVerticalNavLink routerLink="/mascotas-adoptar">
+        <i class="fas fa-paw" routerLink="/mascotas-adoptar" routerLinkActive="active"></i>
+        Adoptar
+      </a>
+    </clr-vertical-nav>
+  </div>
+</clr-main-container>

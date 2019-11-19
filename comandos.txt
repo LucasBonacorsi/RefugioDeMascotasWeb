@@ -6,3 +6,4 @@ npm start
 
 //Crear componente 
 ng g c <nombre>
+ng generate component <nombre>  

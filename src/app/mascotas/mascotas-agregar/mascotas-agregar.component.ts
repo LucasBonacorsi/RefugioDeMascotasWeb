@@ -18,9 +18,9 @@ export class MascotasAgregarComponent implements OnInit {
   ) {}
 
   onSubmit() {
-    this.mascotasService.addMascota(this.mascotaForm.value).subscribe(() => {
+      this.mascotasService.addMascota(this.mascotaForm.value).subscribe(() => {
       this.router.navigate(["/mascotas-listar"]);
-    });
+      });
   }
 
   reset() {
