@@ -16,7 +16,9 @@
   <clr-input-container>
     <label> Edad:</label>
     <input clrInput type="number" formControlName="edad"  min="0"/>
-    <clr-control-error>Debe indicar una edad (sólo números)</clr-control-error>
+    <clr-control-error *clrIfError="'required'">Campo obligatorio</clr-control-error>
+    <clr-control-error *clrIfError="'pattern'">Sólo números</clr-control-error>
+    <clr-control-error *clrIfError="'ageValidator'">Edad permitida entre 0 y 120</clr-control-error>
   </clr-input-container>
 
   <clr-input-container>
