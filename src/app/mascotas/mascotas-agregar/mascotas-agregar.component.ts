@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { MascotasService } from "../shared/mascotas.service";
 import { Router } from "@angular/router";
+import { CustomValidator } from 'src/app/validator/custom-validator';
 
 @Component({
   selector: "app-mascotas-agregar",
@@ -9,6 +10,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./mascotas-agregar.component.css"]
 })
 export class MascotasAgregarComponent implements OnInit {
+  
   constructor(
     private fb: FormBuilder,
     private mascotasService: MascotasService,
@@ -16,7 +18,7 @@ export class MascotasAgregarComponent implements OnInit {
   ) {}
 
   onSubmit() {
-    this.mascotasService.addMascota(this.mascotaForm.value).subscribe( () => {
+    this.mascotasService.addMascota(this.mascotaForm.value).subscribe(() => {
       this.router.navigate(["/mascotas-listar"]);
     });
   }
@@ -28,7 +30,7 @@ export class MascotasAgregarComponent implements OnInit {
   public mascotaForm = this.fb.group({
     nombre: ["", Validators.required],
     tipo: ["", Validators.required],
-    edad: ["", [Validators.required, Validators.pattern('[0-9]+')]],
+    edad: ["", [Validators.required, Validators.pattern("[0-9]+"), CustomValidator.ageValidator]],
     descripcion: ["", Validators.required]
   });
 
